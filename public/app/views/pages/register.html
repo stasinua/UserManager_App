@@ -1,0 +1,41 @@
+<div class="row col-sm-6 col-sm-offset-3">
+  <div class="jumbotron">
+    <h1>Регистрация</h1>
+
+    <form name="regForm" ng-submit="register.doRegister()">
+
+      <!--NAME INPUT-->
+      <div class="form-group" ng-class="{ 'has-error' : regForm.name.$invalid }">
+        <label>Имя</label>
+        <input type="text" name="name" class="form-control" ng-model="register.registerData.name" ng-minlength="2">
+        <p class="help-block" ng-show="regForm.name.$error.minlength">Имя должно содержать не менее 2-х символов.</p>
+      </div>
+
+      <!-- USERNAME INPUT -->
+      <div class="form-group" ng-class="{ 'has-error' : regForm.username.$invalid }">
+        <label>Имя пользователя</label>
+        <input type="text" name="username" class="form-control" ng-model="register.registerData.username" ng-minlength="5">
+        <p class="help-block" ng-show="regForm.username.$error.minlength">Имя пользователя должно содержать не менее 5-ти символов.</p>
+      </div>
+
+      <!-- PASSWORD INPUT -->
+      <div class="form-group" ng-class="{ 'has-error' : regForm.password.$invalid }">
+        <label>Пароль</label>
+        <input type="password" name="password" class="form-control" ng-model="register.registerData.password" ng-minlength="8">
+        <p class="help-block" ng-show="regForm.password.$error.minlength">Пароль должен содержать не менее 8-ми символов.</p>
+      </div>
+
+      <div class="alert alert-danger" ng-if="register.error">
+        {{ register.error }}
+      </div>
+      <!-- LOGIN BUTTON -->
+      <button type="submit" class="btn btn-block btn-primary" ng-disabled="!register.registerData.password || !register.registerData.name || !register.registerData.username">
+        <span ng-if="!register.processing">Зарегистрироваться</span>
+        <span ng-if="register.processing" class="spinner">
+          <span class="glyphicon glyphicon-repeat"></span>
+        </span>
+      </button>
+    </form>
+  </div>
+
+</div>

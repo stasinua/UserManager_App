@@ -1,0 +1,12 @@
+{
+  "name": "CRM_app",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "*",
+    "express": "^4.13.3",
+    "jsonwebtoken": "^5.5.4",
+    "mongoose": "^4.3.5",
+    "morgan": "~1.5.0"
+  }
+}

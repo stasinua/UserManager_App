@@ -1,0 +1,18 @@
+<div class="jumbotron text-center">
+  <h1>Приложение простого менеджера пользователей</h1>
+
+  <div ng-if="!main.loggedIn">
+		<p>Войдите, чтобы управлять пользователями.</p>
+		<a href="/login" class="btn btn-primary">Войти</a>
+	</div>
+
+  <div ng-if="!main.loggedIn">
+		<p>Или зарегистрируйте нового.</p>
+		<a href="/register" class="btn btn-primary">Зарегистрировать</a>
+	</div>
+
+	<div ng-if="main.loggedIn">
+		<p>Управляйте пользователями</p>
+		<a href="/users" class="btn btn-primary">Показать пользователей</a>
+	</div>
+</div>
